@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +39,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding: 20px;
+}
+
+li {
+  display: flex;
+  padding: 15px;
+  border: 1px solid lightgray;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.link-info {
+  flex-grow: 1;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  height: 30px;
+  border: 1px solid;
+  padding: 0 30px;
+  font-size: 12px;
+  line-height: 1;
+  background: transparent;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.archive {
+  background: goldenrod;
+}
+
+.delete {
+  background: red;
 }
