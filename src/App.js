@@ -60,6 +60,7 @@ function App() {
         method: 'POST',
         body: JSON.stringify(body)
       });
+      console.log(res);
       resetForm();
       refreshLinks();
     } catch(err) {
