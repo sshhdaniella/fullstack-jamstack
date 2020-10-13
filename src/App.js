@@ -9,7 +9,7 @@ function App() {
 
   const loadLinks = async() => {
     try {
-      const res = await fetch('/api/getLinks');
+      const res = await fetch('/.netlify/functions/getLinks');
       const links = await res.json();
       setLinks(links);
     } catch(err) {
@@ -29,7 +29,7 @@ function App() {
   const archiveLink = async (link) => {
     link.archived = true;
     try {
-      await fetch('/api/updateLink', {
+      await fetch('/.netlify/functions/updateLink', {
         method: 'PUT',
         body: JSON.stringify(link)
       });
@@ -42,7 +42,7 @@ function App() {
   const deleteLink = async (linkId) => {
     const id = linkId;
     try {
-      await fetch('/api/deleteLink', {
+      await fetch('/.netlify/functions/deleteLink', {
         method: 'DELETE',
         body: JSON.stringify({id})
       });
@@ -56,7 +56,7 @@ function App() {
     ev.preventDefault();
     const body = { name, url, description };
     try {
-      const res = await fetch('/api/createLink', {
+      const res = await fetch('/.netlify/functions/createLink', {
         method: 'POST',
         body: JSON.stringify(body)
       });
